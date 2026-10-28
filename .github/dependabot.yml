@@ -1,0 +1,14 @@
+# Checks once a month for updates to the packages the site uses and opens a pull request
+# for them. See docs/UPKEEP.md for what to do with these.
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: monthly
+    groups:
+      minor-and-patch:
+        update-types:
+          - minor
+          - patch
+    open-pull-requests-limit: 5
